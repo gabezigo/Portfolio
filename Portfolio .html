@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gabriel Z. | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: #0e0e0e;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 60px 20px;
+    }
+
+    main {
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #aaa;
+      margin-bottom: 3rem;
+    }
+
+    .project-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 28px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.05), 0 8px 40px rgba(0,0,0,0.5);
+      text-align: left;
+      transition: transform 0.25s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 12px 50px rgba(0,0,0,0.7);
+    }
+
+    .project-card a {
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+
+    .description {
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    @media (min-width: 700px) {
+      .project-list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 450px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .project-card a {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Gabriel Z.</h1>
+      <p>Front-End Developer • Building sleek, functional web experiences</p>
+    </header>
+
+    <section class="project-list">
+      <div class="project-card">
+        <a href="https://project1.netlify.app" target="_blank" rel="noopener noreferrer">Form Validation</a>
+        <p class="description">A user-friendly form with real-time validation to improve data accuracy and user experience.</p>
+      </div>
+
+      <div class="project-card">
+        <a href="https://project2.netlify.app" target="_blank" rel="noopener noreferrer">Weather App (In Progress)</a>
+        <p class="description">A responsive weather dashboard showing real-time weather data and forecasts by location.</p>
+      </div>
+
+      <div class="project-card">
+        <a href="https://project3.netlify.app" target="_blank" rel="noopener noreferrer">Countdown Timer</a>
+        <p class="description">A sleek, customizable countdown timer app perfect for tracking important events.</p>
+      </div>
+
+      <div class="project-card">
+        <a href="https://project4.netlify.app" target="_blank" rel="noopener noreferrer">To-Do App V1.0</a>
+        <p class="description">A simple and efficient to-do list application to manage daily tasks and boost productivity.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
