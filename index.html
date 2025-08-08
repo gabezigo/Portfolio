@@ -46,36 +46,33 @@
     .project-list {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 40px; /* More space between cards */
+      gap: 40px; /* Spacing between cards */
     }
 
     .project-card {
-      background: rgba(255, 255, 255, 0.08); /* lighter glass background */
+      background: rgba(255, 255, 255, 0.03);
       border-radius: 18px;
       padding: 32px;
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
       text-align: left;
       position: relative;
       transition: transform 0.25s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
 
-      /* Bright glowing blue border */
-      border: 1.5px solid rgba(0, 191, 255, 0.7);
-
-      /* Neon blue glow border */
       box-shadow:
-        0 0 8px rgba(0, 191, 255, 0.8),
-        0 0 20px rgba(0, 191, 255, 0.6),
-        inset 0 0 12px rgba(255, 255, 255, 0.15);
+        0 0 6px rgba(0, 191, 255, 0.5),
+        0 0 18px rgba(0, 191, 255, 0.3),
+        inset 0 0 10px rgba(255, 255, 255, 0.1);
     }
 
     .project-card:hover {
       transform: translateY(-6px);
-      border-color: rgba(0, 191, 255, 1);
+      border-color: rgba(0, 191, 255, 0.9);
       box-shadow:
-        0 0 12px rgba(0, 191, 255, 1),
-        0 0 30px rgba(0, 191, 255, 0.85),
-        inset 0 0 15px rgba(255, 255, 255, 0.2);
+        0 0 12px rgba(0, 191, 255, 0.8),
+        0 0 28px rgba(0, 191, 255, 0.5),
+        inset 0 0 12px rgba(255, 255, 255, 0.15);
     }
 
     .project-card a {
