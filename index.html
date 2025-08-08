@@ -17,23 +17,19 @@
       font-family: 'Manrope', sans-serif;
       background: #0e0e0e;
       color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       min-height: 100vh;
       padding: 60px 20px 100px; /* extra bottom padding for glow */
       position: relative;
-      z-index: 1;
+      overflow-x: hidden;
     }
 
     main {
       max-width: 900px;
       width: 100%;
+      margin: 0 auto;
       text-align: center;
-      flex-grow: 1;
       position: relative;
-      z-index: 2;
+      z-index: 10; /* make sure content is above glow */
     }
 
     header h1 {
@@ -70,7 +66,7 @@
         inset 0 0 12px rgba(255, 255, 255, 0.07),
         0 0 12px rgba(0, 191, 255, 0.3),
         0 0 28px rgba(0, 191, 255, 0.15);
-      z-index: 2;
+      z-index: 10;
     }
 
     .project-card:hover {
@@ -96,7 +92,7 @@
       text-shadow:
         0 0 3px rgba(0, 191, 255, 0.3),
         0 0 6px rgba(0, 191, 255, 0.2);
-      z-index: 2;
+      z-index: 10;
     }
 
     .project-card a::after {
@@ -105,7 +101,7 @@
       font-weight: 700;
       opacity: 0.6;
       transition: opacity 0.3s ease;
-      z-index: 2;
+      z-index: 10;
     }
 
     .project-card a:hover {
@@ -125,9 +121,75 @@
       font-size: 1rem;
       color: #ccc;
       line-height: 1.6;
-      z-index: 2;
+      z-index: 10;
     }
 
-    /* The bottom radial glow */
+    /* Bottom radial glow */
     .bottom-glow {
       position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 130vw;
+      height: 200px;
+      pointer-events: none;
+      background: radial-gradient(
+        ellipse at center bottom,
+        rgba(0, 191, 255, 0.35) 0%,
+        rgba(0, 191, 255, 0) 85%
+      );
+      filter: blur(60px);
+      z-index: 1; /* BELOW content */
+    }
+
+    @media (min-width: 700px) {
+      .project-list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 450px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .project-card a {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Gabriel Z.</h1>
+      <p>Front-End Developer • Building sleek, functional web experiences</p>
+    </header>
+
+    <section class="project-list">
+      <div class="project-card">
+        <a href="https://gabezigo.github.io/Form-validation/" target="_blank" rel="noopener noreferrer">Form Validation</a>
+        <p class="description">A user-friendly form with real-time validation to improve data accuracy and user experience.</p>
+      </div>
+
+      <div class="project-card">
+        <a href="https://gabezigo.github.io/Weather-app/" target="_blank" rel="noopener noreferrer">Weather App (In Progress)</a>
+        <p class="description">A responsive weather dashboard showing real-time weather data and forecasts by location.</p>
+      </div>
+
+      <div class="project-card">
+        <a href="https://gabezigo.github.io/Countdown-Timer/" target="_blank" rel="noopener noreferrer">Countdown Timer</a>
+        <p class="description">A sleek, customizable countdown timer app perfect for tracking important events.</p>
+      </div>
+
+      <div class="project-card">
+        <a href="https://gabezigo.github.io/To-Do-App-V1.0/" target="_blank" rel="noopener noreferrer">To-Do App V1.0</a>
+        <p class="description">A simple and efficient to-do list application to manage daily tasks and boost productivity.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="bottom-glow"></div>
+
+</body>
+</html>
