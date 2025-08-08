@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gabriel Z. | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
   <style>
     /* Reset */
-    * {margin:0; padding:0; box-sizing:border-box;}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Manrope', sans-serif;
@@ -31,9 +31,7 @@
     header p { font-size: 1.1rem; color: #aaa; margin-bottom: 3rem; }
 
     .project-list {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
+      display: grid; grid-template-columns: 1fr; gap: 40px;
     }
 
     .project-card {
@@ -43,56 +41,51 @@
       backdrop-filter: blur(28px);
       border: 1px solid rgba(255,255,255,0.07);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-
       box-shadow:
         inset 0 0 12px rgba(255,255,255,0.07),
-        0 0 20px rgba(12,106,167,0.6),
-        0 0 48px rgba(12,106,167,0.35);
+        0 0 12px rgba(28, 166, 252, 0.25),
+        0 0 28px rgba(28, 166, 252, 0.1);
       z-index: 10;
     }
 
     .project-card:hover {
       transform: translateY(-6px);
-      border-color: rgba(12,106,167,0.7);
+      border-color: rgba(28, 166, 252, 0.4);
       box-shadow:
-        inset 0 0 18px rgba(255,255,255,0.12),
-        0 0 30px rgba(12,106,167,0.85),
-        0 0 70px rgba(12,106,167,0.55);
+        inset 0 0 15px rgba(255,255,255,0.12),
+        0 0 20px rgba(28, 166, 252, 0.4),
+        0 0 45px rgba(28, 166, 252, 0.2);
     }
 
     .project-card a {
       color: #fff;
       font-size: 1.4rem;
       font-weight: 600;
-      text-decoration: none;
       margin-bottom: 8px;
       display: inline-block;
       transition: color 0.3s ease, text-shadow 0.3s ease;
       text-shadow:
-        0 0 6px rgba(12,106,167,0.6),
-        0 0 12px rgba(12,106,167,0.4);
+        0 0 3px rgba(28, 166, 252, 0.3),
+        0 0 6px rgba(28, 166, 252, 0.2);
       z-index: 10;
     }
 
     .project-card a::after {
-      content: '→';
-      margin-left: 6px;
-      font-weight: 700;
-      opacity: 0.7;
+      content: '→'; margin-left: 6px;
+      font-weight: 700; opacity: 0.6;
       transition: opacity 0.3s ease;
+      z-index: 10;
     }
 
     .project-card a:hover {
-      color: #0c6aa7;
+      color: #1CA6FC;
       text-decoration: underline;
       text-shadow:
-        0 0 8px rgba(12,106,167,0.8),
-        0 0 18px rgba(12,106,167,0.6);
+        0 0 5px rgba(28, 166, 252, 0.5),
+        0 0 12px rgba(28, 166, 252, 0.3);
     }
 
-    .project-card a:hover::after {
-      opacity: 1;
-    }
+    .project-card a:hover::after { opacity: 1; }
 
     .description {
       font-size: 1rem;
@@ -101,20 +94,21 @@
       z-index: 10;
     }
 
+    /* Bottom radial glow, soft and subtle */
     .bottom-glow {
       position: fixed;
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
       width: 140vw;
-      height: 260px;
+      height: 240px;
       pointer-events: none;
       background: radial-gradient(
         ellipse at center bottom,
-        rgba(12,106,167,0.7) 0%,
-        rgba(12,106,167,0) 85%
+        rgba(28, 166, 252, 0.4) 0%,
+        rgba(28, 166, 252, 0) 85%
       );
-      filter: blur(100px);
+      filter: blur(80px);
       z-index: 1;
     }
 
@@ -132,18 +126,18 @@
   <main>
     <header>
       <h1>Gabriel Z.</h1>
-      <p>Front‑End Developer • Building sleek, functional web experiences</p>
+      <p>Front-End Developer • Building sleek, functional web experiences</p>
     </header>
 
     <section class="project-list">
       <div class="project-card">
         <a href="https://gabezigo.github.io/Form-validation/" target="_blank">Form Validation</a>
-        <p class="description">A user‑friendly form with real‑time validation to improve data accuracy and user experience.</p>
+        <p class="description">A user-friendly form with real-time validation to improve data accuracy and user experience.</p>
       </div>
 
       <div class="project-card">
         <a href="https://gabezigo.github.io/Weather-app/" target="_blank">Weather App (In Progress)</a>
-        <p class="description">A responsive weather dashboard showing real‑time weather data and forecasts by location.</p>
+        <p class="description">A responsive weather dashboard showing real-time weather data and forecasts by location.</p>
       </div>
 
       <div class="project-card">
@@ -152,8 +146,8 @@
       </div>
 
       <div class="project-card">
-        <a href="https://gabezigo.github.io/To-Do-App-V1.0/" target="_blank">To‑Do App V1.0</a>
-        <p class="description">A simple and efficient to‑do list application to manage daily tasks and boost productivity.</p>
+        <a href="https://gabezigo.github.io/To-Do-App-V1.0/" target="_blank">To-Do App V1.0</a>
+        <p class="description">A simple and efficient to-do list application to manage daily tasks and boost productivity.</p>
       </div>
     </section>
   </main>
