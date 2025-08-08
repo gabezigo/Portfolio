@@ -7,43 +7,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet" />
   <style>
     /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * {margin:0; padding:0; box-sizing:border-box;}
 
     body {
       font-family: 'Manrope', sans-serif;
       background: #0e0e0e;
       color: #fff;
       min-height: 100vh;
-      padding: 60px 20px 120px; /* extra bottom padding for glow */
+      padding: 60px 20px 120px;
       position: relative;
       overflow-x: hidden;
     }
 
     main {
       max-width: 900px;
-      width: 100%;
       margin: 0 auto;
       text-align: center;
       position: relative;
       z-index: 10;
     }
 
-    header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      color: #aaa;
-      margin-bottom: 3rem;
-    }
+    header h1 { font-size: 3rem; font-weight: 700; margin-bottom: 10px; }
+    header p { font-size: 1.1rem; color: #aaa; margin-bottom: 3rem; }
 
     .project-list {
       display: grid;
@@ -52,30 +37,27 @@
     }
 
     .project-card {
-      background: rgba(255, 255, 255, 0.02);
+      background: rgba(255,255,255,0.02);
       border-radius: 18px;
       padding: 32px;
       backdrop-filter: blur(28px);
-      -webkit-backdrop-filter: blur(28px);
-      position: relative;
-      text-align: left;
-      border: 1px solid rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255,255,255,0.07);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
 
       box-shadow:
-        inset 0 0 12px rgba(255, 255, 255, 0.07),
-        0 0 14px rgba(12, 106, 167, 0.45),
-        0 0 36px rgba(12, 106, 167, 0.25);
+        inset 0 0 12px rgba(255,255,255,0.07),
+        0 0 20px rgba(12,106,167,0.6),
+        0 0 48px rgba(12,106,167,0.35);
       z-index: 10;
     }
 
     .project-card:hover {
       transform: translateY(-6px);
-      border-color: rgba(12, 106, 167, 0.7);
+      border-color: rgba(12,106,167,0.7);
       box-shadow:
-        inset 0 0 18px rgba(255, 255, 255, 0.12),
-        0 0 24px rgba(12, 106, 167, 0.8),
-        0 0 60px rgba(12, 106, 167, 0.45);
+        inset 0 0 18px rgba(255,255,255,0.12),
+        0 0 30px rgba(12,106,167,0.85),
+        0 0 70px rgba(12,106,167,0.55);
     }
 
     .project-card a {
@@ -83,15 +65,12 @@
       font-size: 1.4rem;
       font-weight: 600;
       text-decoration: none;
-      display: inline-block;
       margin-bottom: 8px;
-      cursor: pointer;
-      position: relative;
+      display: inline-block;
       transition: color 0.3s ease, text-shadow 0.3s ease;
-
       text-shadow:
-        0 0 4px rgba(12, 106, 167, 0.45),
-        0 0 8px rgba(12, 106, 167, 0.3);
+        0 0 6px rgba(12,106,167,0.6),
+        0 0 12px rgba(12,106,167,0.4);
       z-index: 10;
     }
 
@@ -101,16 +80,14 @@
       font-weight: 700;
       opacity: 0.7;
       transition: opacity 0.3s ease;
-      z-index: 10;
     }
 
     .project-card a:hover {
       color: #0c6aa7;
       text-decoration: underline;
-
       text-shadow:
-        0 0 7px rgba(12, 106, 167, 0.7),
-        0 0 18px rgba(12, 106, 167, 0.5);
+        0 0 8px rgba(12,106,167,0.8),
+        0 0 18px rgba(12,106,167,0.6);
     }
 
     .project-card a:hover::after {
@@ -124,38 +101,30 @@
       z-index: 10;
     }
 
-    /* Brighter bottom radial glow */
     .bottom-glow {
       position: fixed;
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
       width: 140vw;
-      height: 240px;
+      height: 260px;
       pointer-events: none;
       background: radial-gradient(
         ellipse at center bottom,
-        rgba(12, 106, 167, 0.6) 0%,
-        rgba(12, 106, 167, 0) 85%
+        rgba(12,106,167,0.7) 0%,
+        rgba(12,106,167,0) 85%
       );
-      filter: blur(80px);
+      filter: blur(100px);
       z-index: 1;
     }
 
     @media (min-width: 700px) {
-      .project-list {
-        grid-template-columns: 1fr 1fr;
-      }
+      .project-list { grid-template-columns: repeat(2,1fr); }
     }
 
     @media (max-width: 450px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .project-card a {
-        font-size: 1.2rem;
-      }
+      header h1 { font-size: 2rem; }
+      .project-card a { font-size: 1.2rem; }
     }
   </style>
 </head>
@@ -163,33 +132,32 @@
   <main>
     <header>
       <h1>Gabriel Z.</h1>
-      <p>Front-End Developer • Building sleek, functional web experiences</p>
+      <p>Front‑End Developer • Building sleek, functional web experiences</p>
     </header>
 
     <section class="project-list">
       <div class="project-card">
-        <a href="https://gabezigo.github.io/Form-validation/" target="_blank" rel="noopener noreferrer">Form Validation</a>
-        <p class="description">A user-friendly form with real-time validation to improve data accuracy and user experience.</p>
+        <a href="https://gabezigo.github.io/Form-validation/" target="_blank">Form Validation</a>
+        <p class="description">A user‑friendly form with real‑time validation to improve data accuracy and user experience.</p>
       </div>
 
       <div class="project-card">
-        <a href="https://gabezigo.github.io/Weather-app/" target="_blank" rel="noopener noreferrer">Weather App (In Progress)</a>
-        <p class="description">A responsive weather dashboard showing real-time weather data and forecasts by location.</p>
+        <a href="https://gabezigo.github.io/Weather-app/" target="_blank">Weather App (In Progress)</a>
+        <p class="description">A responsive weather dashboard showing real‑time weather data and forecasts by location.</p>
       </div>
 
       <div class="project-card">
-        <a href="https://gabezigo.github.io/Countdown-Timer/" target="_blank" rel="noopener noreferrer">Countdown Timer</a>
+        <a href="https://gabezigo.github.io/Countdown-Timer/" target="_blank">Countdown Timer</a>
         <p class="description">A sleek, customizable countdown timer app perfect for tracking important events.</p>
       </div>
 
       <div class="project-card">
-        <a href="https://gabezigo.github.io/To-Do-App-V1.0/" target="_blank" rel="noopener noreferrer">To-Do App V1.0</a>
-        <p class="description">A simple and efficient to-do list application to manage daily tasks and boost productivity.</p>
+        <a href="https://gabezigo.github.io/To-Do-App-V1.0/" target="_blank">To‑Do App V1.0</a>
+        <p class="description">A simple and efficient to‑do list application to manage daily tasks and boost productivity.</p>
       </div>
     </section>
   </main>
 
   <div class="bottom-glow"></div>
-
 </body>
 </html>
