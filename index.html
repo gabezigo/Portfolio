@@ -22,7 +22,9 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 60px 20px 40px;
+      padding: 60px 20px 100px; /* extra bottom padding for glow */
+      position: relative;
+      z-index: 1;
     }
 
     main {
@@ -30,6 +32,8 @@
       width: 100%;
       text-align: center;
       flex-grow: 1;
+      position: relative;
+      z-index: 2;
     }
 
     header h1 {
@@ -66,6 +70,7 @@
         inset 0 0 12px rgba(255, 255, 255, 0.07),
         0 0 12px rgba(0, 191, 255, 0.3),
         0 0 28px rgba(0, 191, 255, 0.15);
+      z-index: 2;
     }
 
     .project-card:hover {
@@ -91,6 +96,7 @@
       text-shadow:
         0 0 3px rgba(0, 191, 255, 0.3),
         0 0 6px rgba(0, 191, 255, 0.2);
+      z-index: 2;
     }
 
     .project-card a::after {
@@ -99,6 +105,7 @@
       font-weight: 700;
       opacity: 0.6;
       transition: opacity 0.3s ease;
+      z-index: 2;
     }
 
     .project-card a:hover {
@@ -118,75 +125,9 @@
       font-size: 1rem;
       color: #ccc;
       line-height: 1.6;
+      z-index: 2;
     }
 
-    .glow-bar {
-      width: 100%;
-      max-width: 900px;
-      height: 4px;
-      margin: 40px auto 0;
-      border-radius: 2px;
-      background: #00bfff;
-      box-shadow:
-        0 0 8px #00bfff,
-        0 0 20px #00bfff,
-        0 0 40px #00bfff;
-      opacity: 0.7;
-      transition: opacity 0.3s ease;
-    }
-
-    .glow-bar:hover {
-      opacity: 1;
-    }
-
-    @media (min-width: 700px) {
-      .project-list {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 450px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .project-card a {
-        font-size: 1.2rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <main>
-    <header>
-      <h1>Gabriel Z.</h1>
-      <p>Front-End Developer • Building sleek, functional web experiences</p>
-    </header>
-
-    <section class="project-list">
-      <div class="project-card">
-        <a href="https://gabezigo.github.io/Form-validation/" target="_blank" rel="noopener noreferrer">Form Validation</a>
-        <p class="description">A user-friendly form with real-time validation to improve data accuracy and user experience.</p>
-      </div>
-
-      <div class="project-card">
-        <a href="https://gabezigo.github.io/Weather-app/" target="_blank" rel="noopener noreferrer">Weather App (In Progress)</a>
-        <p class="description">A responsive weather dashboard showing real-time weather data and forecasts by location.</p>
-      </div>
-
-      <div class="project-card">
-        <a href="https://gabezigo.github.io/Countdown-Timer/" target="_blank" rel="noopener noreferrer">Countdown Timer</a>
-        <p class="description">A sleek, customizable countdown timer app perfect for tracking important events.</p>
-      </div>
-
-      <div class="project-card">
-        <a href="https://gabezigo.github.io/To-Do-App-V1.0/" target="_blank" rel="noopener noreferrer">To-Do App V1.0</a>
-        <p class="description">A simple and efficient to-do list application to manage daily tasks and boost productivity.</p>
-      </div>
-    </section>
-  </main>
-
-  <div class="glow-bar"></div>
-
-</body>
-</html>
+    /* The bottom radial glow */
+    .bottom-glow {
+      position: fixed;
